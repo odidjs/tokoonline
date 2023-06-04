@@ -36,16 +36,85 @@
             <li class="nav-item">
               <a href="/index.html" class="nav-link">Rewards</a>
             </li>
-            
-            <!-- Desktop Menu-->
-            
 
           </ul>
-                
+                            <!-- Desktop Menu-->
+            <ul class="navbar-nav d-none d-lg-flex">
+              <li class="nav-item dropdown">
+                <a href="#" class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown">
+                  <img src="/images/icon_user.png" alt="" class="rounded-circle mr-2" />
+                  Hi, Dewangga!
+                </a>
+                <div class="dropdown-menu">
+                  <a href="/dashboard.html" class="dropdown-item"> Dashboard </a>
+                  <a href="/dashboard-account.html" class="dropdown-item">Setting</a>
+                  <div class="dropdown-divider"></div>
+                  <a href="/" class="dropdown-item">Logout</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link mt-2 d-inline-block">
+                  <img src="/images/icon-cart-empty.svg" alt="icon-cart-empty">
+                </a>
+              </li>
+            </ul>
+            <!--Mobile Menu-->
+            <ul class="navbar-nav d-block d-lg-none">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  Hi, Dewangga!
+                </a>
+                <a href="#" class="nav-link d-inline-block">
+                  Cart
+                </a>
+              </li>
+            </ul>
         </div>
       </div>
     </nav>
+    <!--Page Details-->
+    <div class="page-content page-details">
+      <section class="store-breadcrumbs" data-aos="fade-down" data-aos-delay="100">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <nav>
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                    <a href="/index.html">Home</a>
+                  </li>
+                  <li class="breadcrumb-item active">
+                    Product Details
+                  </li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   
+    <section class="store-galerry" id="galerry">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8" data-aos="zoom-in">
+            <transition name="slide-fade" mode="out-in">
+              <img :src="photos[activePhoto].url" :key="photos[activePhoto].id" class="w-100 main-image">
+            </transition>
+          </div>
+          <div class="col-lg-2">
+            <div class="row">
+              <div class="col-3 col-lg-12 mt-2 mt-lg-8" v-for="(photo, index) in photos" :key="photo.id" data-aos="zoom-in" data-aos-delay="100" >
+              <a href="#" @click="changeActive(index)">
+                <img :src="photo.url" class="w-100 thumbnail-image" :class="{ active : index == activePhoto}">
+              </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <footer>
       <div class="container">
         <div class="row">
@@ -60,8 +129,43 @@
     <script src="/vendor/jquery/jquery.slim.min.js"></script>
     <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/vendor/vue/vue.js"></script>
     <script>
       AOS.init();
+    </script>
+    <script>
+      var galerry = new Vue({
+        el: "#galerry",
+        mounted() {
+          AOS.init();
+        },
+        data: {
+          activePhoto: 0,
+          photos: [
+            {
+              id: "1",
+              url: "/images/product-details1.jpg"
+            },
+            {
+              id: "2",
+              url: "/images/product-details2.png"
+            },
+            {
+              id: "3",
+              url: "/images/product-details3.jpg"
+            },
+            {
+              id: "4",
+              url: "/images/product-details4.png"
+            },
+          ]
+        },
+        methods: {
+          changeActive(id) {
+            this.activePhoto = id;
+          },
+        },
+      })
     </script>
     <script src="script/navbar-scroll.js"></script>
   </body>
