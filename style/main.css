@@ -9229,7 +9229,7 @@ footer p {
 .navbar-store .profile-picture {
   max-height: 45px;
 }
-.navbar-store .card-bedge {
+.navbar-store .card-badge {
   display: inline-block;
   min-width: 2em;
   padding: 0.3em;
@@ -9238,6 +9238,7 @@ footer p {
   text-align: center;
   background: #29a867;
   margin-left: -10px;
+  color: white;
 }
 
 .navbar-fixed-top.scrolled {
@@ -9254,6 +9255,86 @@ footer p {
 }
 .page-home .store-new-product {
   margin-top: 10px;
+}
+
+.page-details .store-gallery {
+  margin-top: 20px;
+}
+.page-details .store-gallery img {
+  border-radius: 20px;
+}
+.page-details .store-heading {
+  margin-bottom: 5px;
+}
+.page-details .store-heading h1 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 24px;
+  color: #0C0D36;
+}
+.page-details .store-heading .owner {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: #979797;
+  margin-bottom: 8px;
+}
+.page-details .store-heading .price {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  color: #FF7158;
+}
+.page-details .store-heading .btn-success {
+  border-radius: 6px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.page-details .store-description {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 180%;
+  color: #525252;
+}
+
+.thumbnail-image {
+  margin-bottom: 15px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+}
+.thumbnail-image:hover, .thumbnail-image.active {
+  border: 4px solid #ff7158;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.review h5 {
+  color: #0C0D36;
+  font-size: 18px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 400;
+}
+.review .media img {
+  width: 61px;
+  height: 61px;
+  background: url(<path-to-image>), lightgray 50%/cover no-repeat;
+}
+.review .media h5 {
+  color: #0C0D36;
+  font-size: 16px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+}
+.review .media-body {
+  color: #525252;
+  font-size: 16px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 400;
 }
 
 .component-categories {
@@ -9329,4 +9410,18 @@ footer p {
 }
 .store-breadcrumbs a {
   color: #979797;
+}
+
+.slide-fade-enter-active {
+  transition: all 0.2s ease;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.1s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter,
+.slide-fade-leave-to {
+  transform: translateY(10px);
+  opacity: 1;
 }/*# sourceMappingURL=main.css.map */
